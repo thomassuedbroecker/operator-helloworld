@@ -4,7 +4,7 @@
 
 In this training you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
 
-The the automation of your operator will contain:
+The automation of your simple operator will contain:
 
 * the deployment of the application 
 
@@ -15,13 +15,19 @@ The the automation of your operator will contain:
 
 * Verify the existance of a name space
 
+Your operator will have capability **Level 1** as you see in the image below.
+
+_Note:_ The image resource you can find on the [Operator Framework: What?](https://operatorframework.io/what/) page.
+
+![](./images/capability-model-operatorframework.png)
+
 ### Estimated time and level
 
 |  Time | Level |  
 | - | - | 
 | 60 min | beginner to intermediate  | 
 
-> _Note:_ The installion of all prerequistes isn't included.
+> _Note:_ The installation of all prerequistes isn't included.
 
 ### Objectives
 
