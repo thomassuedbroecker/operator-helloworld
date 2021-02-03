@@ -4,7 +4,7 @@ site_url: https://thomassuedbroecker.github.io/operator-helloworld
 site_author: Customization by Thomas Südbröcker (Keith Tenzer)
 
 # Repository
-repo_name: absolute-beginner-node-red-flow
+repo_name: operator-helloworld
 repo_url: https://github.com/thomassuedbroecker/operator-helloworld
 edit_uri: edit/master/documentation
 docs_dir: documentation
