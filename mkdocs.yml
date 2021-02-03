@@ -15,9 +15,9 @@ nav:
   - Setup: 
       - Setup Development Environment Introduction: setup/01-setup.md
       - Install Docker: setup/02-setup-docker.md
-      - Install Ansible and Module Dependencies: 03-setup-ansibe-module-dependencies.md
-      - Install Make: 04-setup-make.md
-      - Install OpenShift Command Line Tools: 05-setup-oc-cli.md
+      - Install Ansible and Module Dependencies: setup/03-setup-ansibe-module-dependencies.md
+      - Install Make: setup/04-setup-make.md
+      - Install OpenShift Command Line Tools: setup/05-setup-oc-cli.md
   - Exercises: 
       - Exercise 1: exercises/01-exercise.md
       - Exercise 2: exercises/02-exercise.md

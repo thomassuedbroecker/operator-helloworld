@@ -1,10 +1,10 @@
 # Operator Framework Ansible Training
 
-# Introduction
+### Introduction
 
-In this training you will automate the deployment of a `Hello World!` application to OpenShift, with the `Hello World` operator you will build.
+In this training you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
 
-The automation contains:
+The the automation of your operator will contain:
 
 * the deployment of the application 
 
@@ -21,6 +21,8 @@ The automation contains:
 | - | - | 
 | 60 min | beginner to intermediate  | 
 
+> _Note:_ The installion of all prerequistes isn't included.
+
 ### Objectives
 
 This training will show you how to setup a development environment and deploy your first Operator written in Ansible. 
@@ -34,7 +36,7 @@ Upon completing this training you will learn the following:
 * Read and create k8s objects using the k8s Ansible Module
 * Deploy Application
 
-## Prerequisites
+### Prerequisites
 
 * A fedora 30 or higher system with access to the Internet
 * OpenShift 4.x Cluster environment and a cluster admin account
