@@ -43,10 +43,10 @@ Upon completing this training you will learn the following:
 
 It would be good if you are basicly familar with ...
 
-* ... Docker or Podman
-* ... using container registries
-* ... Handle `YMALs`
-* ... deployments of containers to RedHat OpenShift
+* ... [Podman](https://podman.io/) or [Docker](https://www.docker.com/get-started)
+* ... using container registries like [Quay.io](https://quay.io/) 
+* ... Handle `YAMLs`
+* ... deployments of containers to [RedHat OpenShift](https://www.openshift.com/)
 
 ### Technology Used
 
