@@ -59,7 +59,7 @@ It would be good if you are basicly familar with ...
 * [Ansible](https://www.ansible.com/)
 * [Operator Framework](https://operatorframework.io/)
 
-Additional information what will be installed on your local machine:
+Additional information: These tools needed installed on your local machine:
 
 * [Python](https://www.python.org/)
 * [Podman](https://podman.io/) or [Docker](https://www.docker.com/get-started)
