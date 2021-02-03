@@ -1,8 +1,8 @@
-# Operator Framework Ansible Training
+# Operator Framework Ansible Workshop
 
 ### Introduction
 
-In this training you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
+In this workshop you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
 
 The automation of your simple operator will contain:
 
@@ -20,9 +20,9 @@ _Note:_ The image resource you can find on the [Operator Framework: What?](https
 
 ### Objectives
 
-This training will show you how to setup a development environment and deploy your first Operator written in Ansible. 
+This workshop will show you how to setup a development environment and deploy your first Operator written in Ansible. 
 
-Upon completing this training you will learn the following:
+Upon completing this workshop you will learn the following:
 
 * Setup Ansible Operator Development Environment
 * Create Operator Scaffolding and [Custom Resource Definition (CRD/RD)](https://docs.openshift.com/container-platform/4.5/rest_api/extension_apis/customresourcedefinition-apiextensions-k8s-io-v1.html)
