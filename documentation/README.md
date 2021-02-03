@@ -27,8 +27,8 @@ Upon completing this training you will learn the following:
 * Setup Ansible Operator Development Environment
 * Create Operator Scaffolding and [Custom Resource Definition (CRD/RD)](https://docs.openshift.com/container-platform/4.5/rest_api/extension_apis/customresourcedefinition-apiextensions-k8s-io-v1.html)
 * Test and Debug Operators
-* Read parameter inputs from CRs into Ansible facts
-* Read and create k8s objects using the k8s Ansible Module
+* Read parameter inputs from [Custom Resource Definition (CRD/RD)](https://docs.openshift.com/container-platform/4.5/rest_api/extension_apis/customresourcedefinition-apiextensions-k8s-io-v1.html) into [Ansible facts](https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html)
+* Read and create k8s objects using the [k8s Ansible Module](https://docs.ansible.com/ansible/latest/collections/community/kubernetes/k8s_info_module.html)
 * Deploy Application
 
 ### Estimated time and level
@@ -48,13 +48,14 @@ It would be good if you are basicly familar with ...
 
 * ... [Podman](https://podman.io/) or [Docker](https://www.docker.com/get-started)
 * ... using container registries like [Quay.io](https://quay.io/) 
-* ... Handle `YAMLs`
+* ... handle `YAMLs`
 * ... deployments of containers to [RedHat OpenShift](https://www.openshift.com/)
 
-### Technology Used
+### Technology/Frameworks Used
 
 * [Ansible](https://www.ansible.com/)
 * [Operator Framework](https://operatorframework.io/)
+* [Ansible Runner](https://github.com/ansible/ansible-runner)
 
 Additional information: These tools needed installed on your local machine:
 
