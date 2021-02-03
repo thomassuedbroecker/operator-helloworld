@@ -7,13 +7,10 @@ In this training you will automate the deployment of an `Hello World!` applicati
 The automation of your simple operator will contain:
 
 * the deployment of the application 
-
-  * Create deployment
-  * Create service
-  * Create route
-    * Therefor we will collect application domain information
-
-* Verify the existance of a name space
+    * Create deployment
+    * Create service
+    * Create route
+      * Therefor we will collect application domain information
 
 Your operator will have capability **Level 1** as you see in the image below.
 
