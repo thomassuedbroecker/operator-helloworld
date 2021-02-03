@@ -144,7 +144,9 @@ The content to add to the `main.yml`
 
 ### Step 6: Add parameter to the Operator Custom Resource
 
-Here we will add the toggle_message parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. This is how you get input from your users. In addition as you may have noticed you can access CR metadata using the ansible_operator_meta parameter in ansible. In the above example that is the name os the namespace.
+Here we will add the toggle_message parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. 
+
+This is how you get input from your users. In addition as you may have noticed you can access CR metadata using the `ansible_operator_meta` parameter in ansible. In the above example that is the name os the namespace.
 
 ```sh
 nano config/samples/cache_v1_hello.yaml
@@ -169,15 +171,23 @@ Now that we have implemented some tasks and our parameter we can run ther Operat
 ansible-operator run local
 ```
 
+Example output:
+
+![](../images/01-run-local.png)
+
 ### Step 8: Create a hello customer resource
 
-Open another terminal and create the CR. Once the CR is created, the Operator will execute the Ansible role and print our debug message.
+Open `another terminal and create the CR in your OpenShift cluster. 
+Once the CR is created, the Operator will execute the Ansible role and print our debug message.
 
 ```sh
 oc create -f config/samples/cache_v1_hello.yaml
 ```
+Example output second terminal:
 
-Example output: 
+![](../images/02-run-local.png)
+
+Example output first terminal: 
 
 ```sh
 TASK [Hello World Task] ********************************
@@ -185,3 +195,5 @@ ok: [localhost] => {
     "msg": "Hello World! I live in a namespace called operator-helloworld"
 }
 ```
+
+![](../images/03-run-local.png)
