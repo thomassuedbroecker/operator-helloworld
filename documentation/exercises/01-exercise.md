@@ -29,6 +29,8 @@ oc login --token=7DMj4CRxuUCzXXXXXXXXXX --server=https://XXXXX.com:30596
 
 * Verify your login
 
+Example output:
+
 ![](../images/roks-04-copy-login-command.png)
 
 
@@ -37,6 +39,8 @@ oc login --token=7DMj4CRxuUCzXXXXXXXXXX --server=https://XXXXX.com:30596
 ```sh
 oc new-project operator-helloworld
 ```
+
+Example output:
 
 ![](../images/roks-01-create-project.png)
 
@@ -77,13 +81,25 @@ Here we will install Custom Resource Definition (CRD) in the current namespace `
 ```sh
 make install
 ```
+
+Example output:
+
+![](../images/makefile-install.png)
+
 _Note:_ To inspect what happens during the `install` just open the `Makefile`.
 
 ```sh
 nano Makefile
 ```
+Example output:
 
 ![](../images/makefile.png)
+
+### Optional Step 4.1: Inspect the created `Custom Resource Definition (CRD) in your cluster
+
+Open OpenShift web console and select `Administration -> Custom Resource Definitions` and insert `hello` into the search field.
+
+![](../images/01-crd.png)
 
 ### Step 5: Add Print Task to Operator Role
 
