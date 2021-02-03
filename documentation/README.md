@@ -18,14 +18,6 @@ _Note:_ The image resource you can find on the [Operator Framework: What?](https
 
 ![](./images/capability-model-operatorframework.png)
 
-### Estimated time and level
-
-|  Time | Level |  
-| - | - | 
-| 60 min | beginner to intermediate  | 
-
-> _Note:_ The installation of all prerequistes isn't included.
-
 ### Objectives
 
 This training will show you how to setup a development environment and deploy your first Operator written in Ansible. 
@@ -38,6 +30,14 @@ Upon completing this training you will learn the following:
 * Read parameter inputs from CRs into Ansible facts
 * Read and create k8s objects using the k8s Ansible Module
 * Deploy Application
+
+### Estimated time and level
+
+|  Time | Level |  
+| - | - | 
+| 60 min | beginner to intermediate  | 
+
+> _Note:_ The installation of all prerequistes isn't included.
 
 ### Prerequisites
 
