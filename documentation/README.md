@@ -4,7 +4,7 @@
 
 In this workshop you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
 
-The automation of your simple operator will contain:
+The automation of your simple operator will do for you:
 
 * the deployment of the application 
     * Create deployment
@@ -44,7 +44,7 @@ Upon completing this workshop you will learn the following:
 * A fedora 30 or higher system with access to the Internet
 * OpenShift 4.x Cluster environment and a cluster admin account
 
-It would be good if you are basicly familar with ...
+It would be good, if you are basicly familar with ...
 
 * ... [Podman](https://podman.io/) or [Docker](https://www.docker.com/get-started)
 * ... using container registries like [Quay.io](https://quay.io/) 
@@ -73,6 +73,6 @@ Following tools are needed to be installed on your local machine:
 
 ### Credits
 
-* [Keith Tenzer](http://keithtenzer.com)
+* [Keith Tenzer](http://keithtenzer.com) (creater of the initial version of the workshop)
 * [Thomas Südbröcker](https://twitter.com/tsuedbroecker)
 

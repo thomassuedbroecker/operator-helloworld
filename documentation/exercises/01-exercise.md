@@ -62,7 +62,7 @@ cd operator-helloworld
 operator-sdk init --plugins=ansible --domain=hello.example.com
 ```
 
-In the image you see the created folders and files.
+The image below show the created folders and files.
 
 ![](../images/roks-02-create-project.png)
 
@@ -86,7 +86,7 @@ Example output:
 
 ![](../images/makefile-install.png)
 
-_Note:_ To inspect what happens during the `install` just open the `Makefile`.
+_Note:_ To inspect what happens during the `install`, just open the `Makefile`.
 
 ```sh
 nano Makefile
@@ -144,7 +144,7 @@ The content to add to the `main.yml`
 
 ### Step 6: Add parameter to the Operator Custom Resource
 
-Here we will add the toggle_message parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. 
+Here we will add the `toggle_message parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. 
 
 This is how you get input from your users. In addition as you may have noticed you can access CR metadata using the `ansible_operator_meta` parameter in ansible. In the above example that is the name os the namespace.
 
