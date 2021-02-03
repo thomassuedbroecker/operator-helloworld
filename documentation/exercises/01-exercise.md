@@ -68,11 +68,22 @@ operator-sdk create api --group cache --version v1 --kind Hello --generate-role
 
 ### Step 4: Create [Custom Resource Definition (CRD)](https://docs.openshift.com/container-platform/4.5/rest_api/extension_apis/customresourcedefinition-apiextensions-k8s-io-v1.html)
 
-The operator-sdk will generate a CRD this will extend the k8s API and allow users to interact with the Operator through the API. Here we will install CRD in the current namespace operator-helloworld.
+The `operator-sdk` will generate a Custom Resource Definition (CRD).
 
-```
+> The Custom Resource Definition (CRD) will `extend` the k8s API and allow users to `interact` with the Operator through the API. 
+
+Here we will install Custom Resource Definition (CRD) in the current namespace `operator-helloworld`.
+
+```sh
 make install
 ```
+_Note:_ To inspect what happens during the `install` just open the `Makefile`.
+
+```sh
+nano Makefile
+```
+
+![](../images/makefile.png)
 
 ### Step 5: Add Print Task to Operator Role
 
