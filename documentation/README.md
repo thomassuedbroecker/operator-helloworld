@@ -10,7 +10,7 @@ The automation of your simple operator will contain:
     * Create deployment
     * Create service
     * Create route
-      * Therefor we will collect application domain information
+       * Therefor we will collect application domain information
 
 Your operator will have capability **Level 1** as you see in the image below.
 
