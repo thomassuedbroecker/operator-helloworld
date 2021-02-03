@@ -97,9 +97,14 @@ Example output:
 
 ### Optional Step 4.1: Inspect the created `Custom Resource Definition (CRD) in your cluster
 
-Open OpenShift web console and select `Administration -> Custom Resource Definitions` and insert `hello` into the search field.
+* Open OpenShift web console and select `Administration -> Custom Resource Definitions` and insert `hello` into the search field.
 
 ![](../images/01-crd.png)
+
+* Press `Hello` and you see the details for the definition.
+
+![](../images/02-crd.png)
+
 
 ### Step 5: Add Print Task to Operator Role
 
