@@ -41,7 +41,10 @@ oc new-project operator-helloworld
 ![](../images/roks-01-create-project.png)
 
 ### Step 3: Create Operator Scaffolding
-Using the operator-sdk, create the scaffolding for your new operator. The operator-sdk will generate an Ansible role, create a new custom resource definition (CRD) and all the necessary k8s objects to install the operator. This is a two step process. First initialize and then create API.
+
+Using the operator-sdk, create the scaffolding for your new operator. 
+
+The operator-sdk will generate an Ansible `role`, create a new `custom resource definition (CRD)` and all the necessary `k8s objects` to install the operator. This is a two step process. First initialize and then create API.
 
 ```sh
 mkdir operator-helloworld
