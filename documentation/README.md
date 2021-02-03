@@ -57,11 +57,13 @@ It would be good if you are basicly familar with ...
 * [Operator Framework](https://operatorframework.io/)
 * [Ansible Runner](https://github.com/ansible/ansible-runner)
 
-Additional information: These tools needed installed on your local machine:
+_Additional information:_ 
+
+Following tools are needed to be installed on your local machine:
 
 * [Python](https://www.python.org/)
 * [Podman](https://podman.io/) or [Docker](https://www.docker.com/get-started)
-* curl
+* [curl](https://curl.se)
 * [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) (depending on your cloud provider)
 * [OpenShift CLI (oc)](https://docs.openshift.com/container-platform/4.5/welcome/index.html)
 * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/reference/kubectl/kubectl/)
