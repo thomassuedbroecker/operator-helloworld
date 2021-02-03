@@ -95,20 +95,37 @@ Example output:
 
 ![](../images/makefile.png)
 
-### Optional Step 4.1: Inspect the created `Custom Resource Definition (CRD) in your cluster
+### Optional Step 4.1: Inspect the created `Custom Resource Definition (CRD)` in your cluster
 
 * Open OpenShift web console and select `Administration -> Custom Resource Definitions` and insert `hello` into the search field.
 
 ![](../images/01-crd.png)
 
-* Press `Hello` and you see the details for the definition.
+* Press `Hello` and you see the details of the Custom Resource Definitions.
 
 ![](../images/02-crd.png)
 
 
 ### Step 5: Add Print Task to Operator Role
 
-The operator framework implements Ansible roles. By default it will create a single role but you can certainly have many roles. Roles are mapped to the API endpoint of the CRD in the watches.yaml file. In this case we will be adding a print statement that will print some debug when a parameter toggle_message is set to true to the role.
+The operator framework implements Ansible roles. By default it will create a single role but you can certainly have many roles. Roles are mapped to the API endpoint of the CRD in the `watches.yaml` file. In this case we will be adding a print statement that will print some debug when a parameter toggle_message is set to true to the role.
+
+* Open the `watches.yaml` file and inspect the content.
+
+```
+nano watches.yaml
+```
+
+```yml
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1
+  group: cache.hello.example.com
+  kind: Hello
+  role: hello
+# +kubebuilder:scaffold:watch
+```
+
+* Open the `main.yml` file and insert the print statement.
 
 ```
 nano roles/hello/tasks/main.yml
