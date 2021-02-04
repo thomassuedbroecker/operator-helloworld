@@ -76,7 +76,7 @@ The `operator-sdk` will generate a Custom Resource Definition (CRD).
 
 > The Custom Resource Definition (CRD) will `extend` the k8s API and allow users to `interact` with the Operator through the API. 
 
-Here we will install Custom Resource Definition (CRD) in the current namespace `operator-helloworld`.
+Here we will install Custom Resource Definition (CRD) in the current project `operator-helloworld`.
 
 ```sh
 make install

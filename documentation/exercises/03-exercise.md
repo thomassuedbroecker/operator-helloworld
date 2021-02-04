@@ -77,15 +77,15 @@ _Optional:_ Open your RedHat OpenShift web console select `Developer perspective
 
 ### Step 4: Deploy a `Helloworld Application` using Operator
 
-Using the Operator we just deployed into the `operator-helloworld-system` namespace we will now deploy the application using CR.
+Using the Operator we just deployed into the `operator-helloworld-system` project we will now deploy the application using CR.
 
-* Create the operator
+* Create the application using the operator
 
 ```sh
 oc create -f config/samples/cache_v1_hello.yaml -n operator-helloworld-system
 ```
 
-* Get the deploment information
+* Get the deploment information from the project
 
 ```sh
 oc get deployment -n operator-helloworld-system
@@ -111,8 +111,8 @@ _Optional:_ Open your RedHat OpenShift web console select `Administrator perspec
 
 Now you see the two two created `hello-sample`s.
 
-* One in the namespace `operator-helloworld` 
-* One in the namespace `operator-helloworld-system` 
+* One in the project `operator-helloworld` created by from the local machine
+* One in the project `operator-helloworld-system` created by from the `helloworld-controller-manager RedHat OpenShift
 
 ![](../images/ex-3-04.png)
 
