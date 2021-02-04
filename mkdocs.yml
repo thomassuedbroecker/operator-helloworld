@@ -22,7 +22,7 @@ nav:
       - Exercise 1: exercises/01-exercise.md
       - Exercise 2: exercises/02-exercise.md
       - Exercise 3: exercises/03-exercise.md
-  - References:
+  - Additional resources:
       - YouTube "How does work?"":
          - Building Kubernetes Operators with the Operator Framework and Ansible (Keith Tenzer (YouTube)): https://youtu.be/5XZZxhwb_xs
          - Kubernetes Operators Explained : https://youtu.be/i9V4oCa5f9I
