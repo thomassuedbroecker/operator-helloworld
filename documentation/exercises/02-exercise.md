@@ -103,13 +103,16 @@ localhost                  : ok=5    changed=0    unreachable=0    failed=0    s
 
 ### Step 3: Update Ansible role to deploy hellowoworld application
 
-Now we will learn to use the k8s Ansible module to deploy an application. We will deploy a helloworld application that prints to STDOUT. Notice the route is using the cluster domain we gathered in the previous step. In this step we will create a deployment, service and route for our helloworld application. Append the following tasks to the Ansible role.
+Now we will learn to use the `k8s` Ansible module to deploy an application. 
+We will deploy a helloworld application that prints to `STDOUT`. 
+Notice the route is using the cluster domain we gathered in the previous step. In this step we will create a deployment, service and route for our helloworld application. 
+Append the following tasks to the Ansible role.
 
 ```sh
 nano roles/hello/tasks/main.yml
 ```
 
-* We use `k8s:definition:` to define the `Service`, `Deployment` and `Route
+* We use `k8s:definition:` to define the `Service`, `Deployment` and `Route`
 
 ```yml
 - name: Deploy helloworld service
@@ -201,19 +204,21 @@ nano roles/hello/tasks/main.yml
 
 ### Step 4: Update role permissions
 
-Since we are creating a service and route we need to add those permissions to the role.
+Since we are creating a `service` and `route` we need to add those permissions to the `hello` role,
+to add services so we can create them.
 
-Add services so we can create them.
+Open the `role.yaml` file. (More about [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html))
 
 ```sh
 nano config/rbac/role.yaml
 ```
 
-* More about [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
-
-Permissions to add:
+Add permissions to add.
 
 ```yml
+##
+## Rules for cache.hello.example.com/v1, Kind: Hello
+##
   - apiGroups:
       - ""
     resources:
@@ -224,9 +229,14 @@ Permissions to add:
       - services
 ```
 
-Append routes and ingress api groups so we can also manage those objects.
+Append also `routes` and `ingress api` groups so we can also manage those objects.
 
 ```yml
+##
+## Rules for cache.hello.example.com/v1, Kind: Hello
+##
+  ...
+  ...
   - apiGroups:
     - ""
     - config.openshift.io
@@ -253,13 +263,16 @@ Append routes and ingress api groups so we can also manage those objects.
     - watch
 ```
 
-### Run Operator using ansible-runner
+### Step 5: Run Operator using ansible-runner
 
-This time we should see the application being deployed. A single pod should start and a service/route should be created.
+This time we should see the application being deployed. 
+A single pod should start and a service/route should be created.
 
-```$ ansible-operator run local```
+```sh
+ansible-operator run local
+```
 
-### Test our deployment
+### Step 6: Test our deployment
 
 To test simply use curl against the route URL. It does take a minute or so to start application.
 
@@ -285,12 +298,25 @@ Example output:
 
 ```sh
 NAME         HOST/PORT                                             PATH   SERVICES     PORT   TERMINATION   WILDCARD
-helloworld   hello-operator-helloworld.apps.ocp4.keithtenzer.com          helloworld   8080
+helloworld   hello-operator-helloworld.apps.xxxxx.com          helloworld   8080
 ```
 
 * Invoke `YOUR` URL with curl or just open a browser and insert the URL
 
 ```
-$ curl http://hello-operator-helloworld.apps.ocp4.keithtenzer.com
+$ curl http://hello-operator-helloworld.xxxxxx.com
 Hello OpenShift!
 ```
+
+### Optional Step 7: Open the [`Developer perspective`](https://docs.openshift.com/container-platform/4.5/web_console/odc-about-developer-perspective.html) in your RedHat web console
+
+* Select the `operator-helloworld` project
+* Select the `external route` from the `helloworld` pod
+
+![](../images/ex-2-01.png)
+
+* Simple application in your browser
+
+![](../images/ex-2-02.png)
+
+
