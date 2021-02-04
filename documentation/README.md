@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In this workshop you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator.
+In this workshop you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator, implemented with [Ansible](https://www.ansible.com/).
 
 The automation of your simple operator will do for you:
 
@@ -75,4 +75,19 @@ Following tools are needed to be installed on your local machine:
 
 * [Keith Tenzer](http://keithtenzer.com) (creater of the initial version of the workshop)
 * [Thomas Südbröcker](https://twitter.com/tsuedbroecker)
+
+### Additional resources
+
+YouTube "How it does work?":
+
+* [Building Kubernetes Operators with the Operator Framework and Ansible (Keith Tenzer)](https://youtu.be/5XZZxhwb_xs)
+* [Kubernetes Operators Explained](https://youtu.be/i9V4oCa5f9I)
+* [What is Ansible?](https://youtu.be/fHO1X93e4WA)
+* [Operators on OpenShift Container Platform 4.x](https://youtu.be/JMrxPyv9nxQ)
+
+Operator Resoureces:
+
+* [Operator SDK](https://sdk.operatorframework.io/)
+* [Operator Hub (OpenShift operators)](https://operatorhub.io/?category=OpenShift+Optional)
+* [Operator Hub (IBM operators)](https://operatorhub.io/?keyword=IBM)
 
