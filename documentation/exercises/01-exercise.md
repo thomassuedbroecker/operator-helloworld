@@ -13,7 +13,7 @@ In this exercise you will complete the following:
 
 ![](../images/roks-01-copy-login-command.png)
 
-* Press `Display Token``
+* Press `Display Token`
 
 ![](../images/roks-02-copy-login-command.png)
 
@@ -144,7 +144,7 @@ The content to add to the `main.yml`
 
 ### Step 6: Add parameter to the Operator Custom Resource
 
-Here we will add the `toggle_message parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. 
+Here we will add the `toggle_message` parameter to the CR. Any parameters under the CR spec are automatically visible in Ansible. 
 
 This is how you get input from your users. In addition as you may have noticed you can access CR metadata using the `ansible_operator_meta` parameter in ansible. In the above example that is the name os the namespace.
 
@@ -165,7 +165,7 @@ spec:
 
 ### Step 7: Run Operator using ansible-runner
 
-Now that we have implemented some tasks and our parameter we can run ther Operator locally using the ansible-runner to test it. 
+Now that we have implemented some tasks and our parameter we can run ther Operator locally using the `ansible-runner` to test it. 
 
 ```sh
 ansible-operator run local
@@ -177,8 +177,8 @@ Example output:
 
 ### Step 8: Create a hello customer resource
 
-Open `another terminal and create the CR in your OpenShift cluster. 
-Once the CR is created, the Operator will execute the Ansible role and print our debug message.
+Open another terminal and create the CR in your OpenShift cluster. 
+Once the CR is created, the Operator will execute the Ansible role tasks and print our debug message.
 
 ```sh
 oc create -f config/samples/cache_v1_hello.yaml

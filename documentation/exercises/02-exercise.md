@@ -9,7 +9,7 @@ In this exercise you will complete the following:
 
 ### Step 1: Update Ansible role to get cluster domain name and save as a fact
 
-Here we will learn to use the k8s Ansible module to gather information we want to use later in our automation. In this case the cluster domain name. Append the following tasks to the Ansible role.
+Here we will learn to use the `k8s Ansible` module to gather information we want to use later in our automation. In this case the cluster domain name. Append the following tasks to the Ansible role.
 
 We going to following [Asible](https://docs.ansible.com/) 'keywords':
 
@@ -207,13 +207,13 @@ nano roles/hello/tasks/main.yml
 Since we are creating a `service` and `route` we need to add those permissions to the `hello` role,
 to add services so we can create them.
 
-Open the `role.yaml` file. (More about [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html))
+Open the `role.yaml` file. (More about [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html))
 
 ```sh
 nano config/rbac/role.yaml
 ```
 
-Add permissions to add.
+Change the permissions.
 
 ```yml
 ##
@@ -227,6 +227,14 @@ Add permissions to add.
       - pods/exec
       - pods/log
       - services
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
 ```
 
 Append also `routes` and `ingress api` groups so we can also manage those objects.
@@ -271,7 +279,7 @@ Append also `routes` and `ingress api` groups so we can also manage those object
 ### Step 5: Run Operator using ansible-runner
 
 This time we should see the application being deployed. 
-A single pod should start and a service/route should be created.
+A single pod should start and a `service/route` should be created.
 
 ```sh
 ansible-operator run local

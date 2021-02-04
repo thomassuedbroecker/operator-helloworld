@@ -10,8 +10,7 @@ In this exercise you will complete the following:
 
 Quay.io us a container registry provided by Red Hat. You can create your own account push container images to it. Each image can be public or private. To make images available to OpenShift you will need to make them public.
 
-Go to [Quay.io](https://quay.io/) and create your own account if you don't have one.
-Then logon on to [Quay.io](https://quay.io/) in your terminal session.
+Go to [Quay.io](https://quay.io/) and create your own account if you don't have one and then login to [Quay.io](https://quay.io/).
 
 ```sh
 docker login quay.io
@@ -23,7 +22,7 @@ docker login quay.io
 sudo make docker-build docker-push IMG=quay.io/ktenzer/operator-helloworld:latest
 ```
 
-Make the `operator-helloworld` image in your quay.io account public. Log into quya.io, click on the image. Under `settings (on the left) there is option to make the image public.
+Make the `operator-helloworld` image in your quay.io account public. Logon to quya.io, click on the image. Under `settings (on the left) there is option to make the image public.
 
 ![](../images/ex-3-00.png)
 
@@ -105,14 +104,14 @@ _Optional:_ Open your RedHat OpenShift web console select `Developer perspective
 
 _Optional:_ Open your RedHat OpenShift web console select `Administrator perspective` and `Custom Resource Definition` 
 
-* Search for `Hello` and press `Hello``
+* Search for `Hello` and press `Hello`
 
 ![](../images/ex-3-05.png)
 
 Now you see the two two created `hello-sample`s.
 
 * One in the project `operator-helloworld` created by from the local machine
-* One in the project `operator-helloworld-system` created by from the `helloworld-controller-manager RedHat OpenShift
+* One in the project `operator-helloworld-system` created by from the `helloworld-controller-manager` RedHat OpenShift
 
 ![](../images/ex-3-04.png)
 
