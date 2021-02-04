@@ -11,6 +11,11 @@ In this exercise you will complete the following:
 Quay.io us a container registry provided by Red Hat. You can create your own account push container images to it. Each image can be public or private. To make images available to OpenShift you will need to make them public.
 
 Go to [Quay.io](https://quay.io/) and create your own account if you don't have one.
+Then logon on to [Quay.io](https://quay.io/) in your terminal session.
+
+```sh
+docker login quay.io
+```
 
 ### Step 2: Build Operator image and push to quay.io
 
@@ -18,17 +23,42 @@ Go to [Quay.io](https://quay.io/) and create your own account if you don't have 
 sudo make docker-build docker-push IMG=quay.io/ktenzer/operator-helloworld:latest
 ```
 
-Make the `operator-helloworld` image in your quay.io account public. Log into quya.io, click on the image. Under settings (on the left) there is option to make the image public.
+Make the `operator-helloworld` image in your quay.io account public. Log into quya.io, click on the image. Under `settings (on the left) there is option to make the image public.
+
+![](ex-3-00.png)
 
 ### Step 3: Deploy Operator to OpenShift Cluster
 
-By default the operator will be deployed to a project called operator-helloworld-system. You can change this by editing the `config/default/kustomization.yaml` file.
+By default the operator will be deployed to a project called `operator-helloworld-system`. The operator is called `operator-helloworld-controller-manager`.
 
 ```sh
 make deploy IMG=quay.io/ktenzer/operator-helloworld:latest
 ```
 
-Check Operator Deployment
+Example output:
+
+```sh
+cd config/manager && /home/ubuntu/operator-helloworld/bin/kustomize edit set image controller=quay.io/ktenzer/operator-helloworld:latest
+/home/ubuntu/operator-helloworld/bin/kustomize build config/default | kubectl apply -f -
+namespace/operator-helloworld-system created
+customresourcedefinition.apiextensions.k8s.io/hellos.cache.hello.example.com created
+role.rbac.authorization.k8s.io/operator-helloworld-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/operator-helloworld-manager-role created
+clusterrole.rbac.authorization.k8s.io/operator-helloworld-metrics-reader created
+clusterrole.rbac.authorization.k8s.io/operator-helloworld-proxy-role created
+rolebinding.rbac.authorization.k8s.io/operator-helloworld-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/operator-helloworld-manager-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/operator-helloworld-proxy-rolebinding created
+service/operator-helloworld-controller-manager-metrics-service created
+deployment.apps/operator-helloworld-controller-manager created
+
+```
+
+_Note:_ You can change project name by editing the `config/default/kustomization.yaml` file.
+
+![](../images/ex-3-01.png)
+
+* Check Operator Deployment
 
 ```sh
 oc get deployment -n operator-helloworld-system
@@ -41,7 +71,11 @@ NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
 helloworld-controller-manager   1/1     1            1           37s
 ```
 
-### Step 4: Deploy Helloworld Application using Operator
+_Optional:_ Open your RedHat OpenShift web console select `Developer perspective` and `Topology`. Ensure you are in the `operator-helloworld-system` project.
+
+![](../images/ex-3-02.png)
+
+### Step 4: Deploy a `Helloworld Application` using Operator
 
 Using the Operator we just deployed into the `operator-helloworld-system` namespace we will now deploy the application using CR.
 
@@ -65,14 +99,56 @@ helloworld                      1/1     1            1           12m
 helloworld-controller-manager   1/1     1            1           12m
 ```
 
+_Optional:_ Open your RedHat OpenShift web console select `Developer perspective` and `Topology`. Ensure you are in the `operator-helloworld-system` project.
+
+![](../images/ex-3-03.png)
+
+_Optional:_ Open your RedHat OpenShift web console select `Administrator perspective` and `Custom Resource Definition` 
+
+* Search for `Hello` and press `Hello``
+
+![](../images/ex-3-05.png)
+
+Now you see the two two created `hello-sample`s.
+
+* One in the namespace `operator-helloworld` 
+* One in the namespace `operator-helloworld-system` 
+
+![](../images/ex-3-04.png)
+
+
 ### Step 5: Cleanup Application
-Removing the CR will delete everything that was created by it since the objects are linked to the CR.
+
+Removing the CR will delete everything that was created by it `since` the objects are linked to the CR. 
 
 ```sh
 oc delete hello hello-sample -n operator-helloworld-system
 ```
 
-### Step 6: Cleanup Operator
+Example output:
+
+```sh
+hello.cache.hello.example.com "hello-sample" deleted
+```
+
+You see there is one remaining.
+
+![](../images/ex-3-06.png)
+
+### Step 6: Verify the operator is remaining in the deployment of the `operator-helloworld-system` project.
+
+```sh
+oc get deployment -n operator-helloworld-system
+```
+
+Example output:
+
+```sh
+NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+operator-helloworld-controller-manager   1/1     1            1           153m
+```
+
+### Step 7: Cleanup Operator
 
 This will remove the Operator, CRD and all the roles.
 
@@ -80,4 +156,37 @@ This will remove the Operator, CRD and all the roles.
 make undeploy
 ```
 
-**Congrats**, if you got this far you are ready to write your own Operators in Ansible! :smiley:
+Example output:
+
+```sh
+/home/ubuntu/operator-helloworld/bin/kustomize build config/default | kubectl delete -f -
+namespace "operator-helloworld-system" deleted
+customresourcedefinition.apiextensions.k8s.io "hellos.cache.hello.example.com" deleted
+role.rbac.authorization.k8s.io "operator-helloworld-leader-election-role" deleted
+clusterrole.rbac.authorization.k8s.io "operator-helloworld-manager-role" deleted
+clusterrole.rbac.authorization.k8s.io "operator-helloworld-metrics-reader" deleted
+clusterrole.rbac.authorization.k8s.io "operator-helloworld-proxy-role" deleted
+rolebinding.rbac.authorization.k8s.io "operator-helloworld-leader-election-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "operator-helloworld-manager-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "operator-helloworld-proxy-rolebinding" deleted
+service "operator-helloworld-controller-manager-metrics-service" deleted
+deployment.apps "operator-helloworld-controller-manager" deleted
+```
+
+### Step 8: Verify the operator is deleted
+
+```sh
+oc get deployment -n operator-helloworld-system
+```
+Example output:
+
+```sh
+No resources found in operator-helloworld-system namespace.
+```
+
+You can also verify the `Customer Resource Definition` for `hello` in the web console.
+
+![](../images/ex-3-07.png)
+
+
+**Congrats**, if you got this far you are ready to write your own Operators in Ansible!

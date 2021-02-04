@@ -243,8 +243,13 @@ Append also `routes` and `ingress api` groups so we can also manage those object
     resources:
     - ingresses
     verbs:
+    - create
+    - delete
+    - deletecollection
     - get
     - list
+    - patch
+    - update
     - watch
   - apiGroups:
     - ""
@@ -310,12 +315,12 @@ Hello OpenShift!
 
 ### Optional Step 7: Open the [`Developer perspective`](https://docs.openshift.com/container-platform/4.5/web_console/odc-about-developer-perspective.html) in your RedHat web console
 
-* Select the `operator-helloworld` project
-* Select the `external route` from the `helloworld` pod
+* Select `operator-helloworld` project
+* Select `external route` from the `helloworld` pod
 
 ![](../images/ex-2-01.png)
 
-* Simple application in your browser
+* Verify the application in your browser
 
 ![](../images/ex-2-02.png)
 
