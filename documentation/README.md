@@ -85,7 +85,7 @@ YouTube "How it does work?":
 * [What is Ansible?](https://youtu.be/fHO1X93e4WA)
 * [Operators on OpenShift Container Platform 4.x](https://youtu.be/JMrxPyv9nxQ)
 
-Operator Resoureces:
+Operator Resources:
 
 * [Operator SDK](https://sdk.operatorframework.io/)
 * [Operator Hub (OpenShift operators)](https://operatorhub.io/?category=OpenShift+Optional)
