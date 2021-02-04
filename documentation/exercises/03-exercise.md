@@ -80,4 +80,4 @@ This will remove the Operator, CRD and all the roles.
 make undeploy
 ```
 
-Congrats if you got this far you are ready to write your own Operators in Ansible!
+**Congrats**, if you got this far you are ready to write your own Operators in Ansible! :smiley:
