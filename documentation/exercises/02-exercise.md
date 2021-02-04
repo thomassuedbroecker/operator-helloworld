@@ -50,13 +50,55 @@ Each time Operator is started or something changes with our CRD the Ansible role
 ansible-operator run local
 ```
 
-Example output:
+In the Example output you see the execution of the predefined tasks in the `main.yml`.
+
+* `Gathering Facts` 
 
 ```sh
-TASK [Print application domain] ********************************
+--------------------------- Ansible Task StdOut -------------------------------
+TASK [Gathering Facts] *********************************************************
+-------------------------------------------------------------------------------
+{"level":"info","ts":1612430621.8876169,"logger":"logging_event_handler","msg":"[playbook debug]","name":"hello-sample","namespace":"operator-helloworld","gvk":"cache.hello.example.com/v1, Kind=Hello","event_type":"runner_on_ok","job":"3916589616287113937","EventData.TaskArgs":""}
+```
+
+* `Hello World Task`
+
+```sh
+--------------------------- Ansible Task StdOut -------------------------------
+TASK [Hello World Task] ******************************** 
 ok: [localhost] => {
-    "msg": "Application domain is apps.ocp4.keithtenzer.com"
+    "msg": "Hello World! I live in a namespace called operator-helloworld"
 }
+"level":"info","ts":1612430621.8958986,"logger":"logging_event_handler","msg":"[playbook task]","name":"hello-sample","namespace":"operator-helloworld","gvk":"cache.hello.example.com/v1, Kind=Hello","event_type":"playbook_on_task_start","job":"3916589616287113937","EventData.Name":"hello : Get Application Domain from Cluster Ingress"}
+```
+
+* `hello : Get Application Domain from Cluster Ingress`
+
+```sh
+-------------------------- Ansible Task StdOut -------------------------------
+TASK [hello : Get Application Domain from Cluster Ingress] *********************
+task path: /home/ubuntu/operator-helloworld/roles/hello/tasks/main.yml:8
+"level":"info","ts":1612430622.4394364,"logger":"proxy","msg":"Skipping cache lookup","resource":{"IsResourceRequest":false,"Path":"/version","Verb":"get","APIPrefix":"","APIGroup":"","APIVersion":"","Namespace":"","Resource":"","Subresource":"","Name":"","Parts":null}}
+....
+```
+
+* `Print application domain`
+
+```sh
+--------------------------- Ansible Task StdOut -------------------------------
+TASK [Print application domain] ******************************** 
+ok: [localhost] => {
+    "msg": "Application domain is rh-workshop-..000.us-south.containers.appdomain.cloud"
+}
+level":"info","ts":1612430626.1358507,"logger":"runner","msg":"Ansible-runner exited successfully","job":"3916589616287113937","name":"hello-sample","namespace":"operator-helloworld"}
+```
+
+* `PLAY RECAP`
+
+```sh
+--------------------------- Ansible Task Status Event StdOut  -----------------
+PLAY RECAP *********************************************************************
+localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
 
 ### Step 3: Update Ansible role to deploy hellowoworld application

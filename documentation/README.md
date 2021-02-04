@@ -91,3 +91,9 @@ Operator Resources:
 * [Operator Hub (OpenShift operators)](https://operatorhub.io/?category=OpenShift+Optional)
 * [Operator Hub (IBM operators)](https://operatorhub.io/?keyword=IBM)
 
+Internal OperatorHub in your RedHat OpenShift cluster.
+
+![](./images/operatorhub.png)
+
+
+
