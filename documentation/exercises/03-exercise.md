@@ -25,7 +25,7 @@ sudo make docker-build docker-push IMG=quay.io/ktenzer/operator-helloworld:lates
 
 Make the `operator-helloworld` image in your quay.io account public. Log into quya.io, click on the image. Under `settings (on the left) there is option to make the image public.
 
-![](ex-3-00.png)
+![](../images/ex-3-00.png)
 
 ### Step 3: Deploy Operator to OpenShift Cluster
 
