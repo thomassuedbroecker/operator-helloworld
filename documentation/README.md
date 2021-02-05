@@ -12,11 +12,23 @@ The automation of your simple operator will do for you:
     * Create route
         * Therefor we will collect application domain information
 
-Your operator will have capability **Level 1** as you see in the image below.
+Your operator will have some of the capabilities in **Level 1** as you see in the image below.
 
 _Note:_ The image resource you can find on the [Operator Framework: What?](https://operatorframework.io/what/) page.
 
 ![](./images/capability-model-operatorframework.png)
+
+This is the definition for Level 1 from the [Operator Framework](https://operatorframework.io/operator-capabilities/)
+
+>Feature 
+> * Installation Of The Workload
+> * Operator deploys an Operand or configures off-cluster resources
+> * Operator waits for managed resources to reach a healthy state
+> * Operator conveys readiness of application or managed resources to the user leveraging the status block of the Custom Resource
+
+>Configuration Of The Workload
+>* Operator provides configuration via the spec section of the Custom Resource
+>* Operator reconciles configuration and updates to it with the status of the managed resources
 
 ### Objectives
 
