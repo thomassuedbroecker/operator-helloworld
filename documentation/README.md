@@ -4,7 +4,7 @@
 
 In this workshop you will automate the deployment of an `Hello World!` application to OpenShift, with an `Hello World` operator, implemented with [Ansible](https://www.ansible.com/).
 
-The automation of your simple operator will do for you:
+Your first simple operator will do for you:
 
 * the deployment of the application 
     * Create deployment
