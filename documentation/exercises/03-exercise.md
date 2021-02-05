@@ -104,7 +104,7 @@ _Optional:_ Open your RedHat OpenShift web console select `Developer perspective
 
 _Optional:_ Open your RedHat OpenShift web console select `Administrator perspective` and `Custom Resource Definition` 
 
-* Search for `Hello` and press `Hello`
+* Search for `Hello` and press CRD `Hello`
 
 ![](../images/ex-3-05.png)
 
