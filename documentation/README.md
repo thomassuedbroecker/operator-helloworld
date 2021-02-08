@@ -19,14 +19,20 @@ _Note:_ The image resource you can find on the [Operator Framework: What?](https
 
 This is the definition for Level 1 from the [Operator Framework](https://operatorframework.io/operator-capabilities/)
 
->Feature 
-> * Installation Of The Workload
-> * Operator deploys an Operand or configures off-cluster resources
-> * Operator waits for managed resources to reach a healthy state
-> * Operator conveys readiness of application or managed resources to the user leveraging the status block of the Custom Resource
+>Feature
+>
+>* Installation Of The Workload
+>
+>* Operator deploys an Operand or configures off-cluster resources
+>
+>* Operator waits for managed resources to reach a healthy state
+>
+>* Operator conveys readiness of application or managed resources to the user leveraging the status block of the Custom Resource
 
 >Configuration Of The Workload
+>
 >* Operator provides configuration via the spec section of the Custom Resource
+>
 >* Operator reconciles configuration and updates to it with the status of the managed resources
 
 ### Objectives
