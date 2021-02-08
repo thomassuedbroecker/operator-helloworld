@@ -6,10 +6,10 @@ In this workshop you will automate the deployment of an `Hello World!` applicati
 
 Your first simple operator will do for you the automates of the creation of :
 
-    * a deployment
-    * a service
-    * a route
-        * Therefor it needs to collect the application domain information
+  * a deployment
+  * a service
+  * a route
+    * Therefor it needs to collect the application domain information
 
 Your operator will have some of the capabilities in **Level 1** as you see in the image below.
 
