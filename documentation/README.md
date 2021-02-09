@@ -19,9 +19,9 @@ _Note:_ The image resource you can find on the [Operator Framework: What?](https
 
 This is the definition for Level 1 from the [Operator Framework](https://operatorframework.io/operator-capabilities/)
 
->Feature
+>Features
 >
->* Installation Of The Workload
+>Installation Of The Workload
 >
 >* Operator deploys an Operand or configures off-cluster resources
 >

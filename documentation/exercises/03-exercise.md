@@ -34,6 +34,20 @@ By default the operator will be deployed to a project called `operator-helloworl
 make deploy IMG=quay.io/ktenzer/operator-helloworld:latest
 ```
 
+As you see in the example output, we create or configure ...
+
+* ... Namespace
+* ... Custom resource
+* ... [Leader election role](https://docs.openshift.com/container-platform/4.5/operators/operator_sdk/osdk-leader-election.html)
+* ... Manager Role
+* ... Proxy Role
+* ... Metrixs reader
+* ... [Leader election role](https://docs.openshift.com/container-platform/4.5/operators/operator_sdk/osdk-leader-election.html) binding
+* ... Manager role binding
+* ... Proxy role binding
+* ... Controller Manager metrics service
+* ... Controller Manager
+
 Example output:
 
 ```sh
@@ -53,11 +67,11 @@ deployment.apps/operator-helloworld-controller-manager created
 
 ```
 
-_Note:_ You can change project name by editing the `config/default/kustomization.yaml` file.
+_Note:_ You can change `project name` by editing the `config/default/kustomization.yaml` file.
 
 ![](../images/ex-3-01.png)
 
-* Check Operator Deployment
+* Verify Operator Deployment
 
 ```sh
 oc get deployment -n operator-helloworld-system
@@ -110,8 +124,8 @@ _Optional:_ Open your RedHat OpenShift web console select `Administrator perspec
 
 Now you see the two two created `hello-sample`s.
 
-* One in the project `operator-helloworld` created by from the local machine
-* One in the project `operator-helloworld-system` created by from the `helloworld-controller-manager` RedHat OpenShift
+* One in the project `operator-helloworld` created the operator running on the local machine
+* One in the project `operator-helloworld-system` created by the `helloworld-controller-manager` in the RedHat OpenShift Cluster
 
 ![](../images/ex-3-04.png)
 

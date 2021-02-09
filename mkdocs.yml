@@ -32,6 +32,7 @@ nav:
          - Operator SDK: https://sdk.operatorframework.io/
          - Operator Hub (OpenShift operators): https://operatorhub.io/?category=OpenShift+Optional
          - Operator Hub (IBM operators): https://operatorhub.io/?keyword=IBM
+      - Additional: additional/additional.md
 
    
 
