@@ -6,9 +6,9 @@ In this exercise you will complete the following:
 * Build image of our Operator and push it to [Quay.io](https://quay.io/)
 * Deploy Operator to OpenShift cluster
 
-Example usage deploy and create a helloworld application:
+Example usage to deploy the operator from the [Quay.io](https://quay.io/) container registry and create a new helloworld application using the operator:
 
-* Deploy gif:
+* Deploy operator gif:
 
 ![](../images/ex-3-01-deploy-operator.gif)
 
