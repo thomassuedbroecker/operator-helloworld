@@ -2,9 +2,9 @@
 
 ### Step 1: Install Docker 17.03+
 
-Add the docker ce repositories. ([Fedora Wiki for DNF](https://fedoraproject.org/wiki/DNF?rd=Dnf))
+Add the docker ce repositories. 
 
-_Note:_ You can also use `podman` and `buildah` instead of `Docker`. For example if you want to run the training on a [Ubuntu](https://ubuntu.com) machine.
+_Note:_ You can also use `podman` and `buildah` instead of `Docker`. For example if you want to run the training on a [Ubuntu](https://ubuntu.com) machine. ([Fedora Wiki for DNF](https://fedoraproject.org/wiki/DNF?rd=Dnf))
 
 ```sh
 sudo dnf -y install dnf-plugins-core
