@@ -3,7 +3,7 @@
 ### Step 1: Install ansible
 
 ```sh
-sudo dnf install -y ansible
+sudo dnf -y install ansible
 ```
 
 The [Ansible runner](https://ansible-runner.readthedocs.io/en/stable/) and [http runner](https://github.com/ansible/ansible-runner-http) is used to run a local version of the operator. This is **very useful for development and testing**.

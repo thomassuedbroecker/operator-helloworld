@@ -58,7 +58,7 @@ Upon completing this workshop you will learn the following:
 
 ### Prerequisites
 
-* A fedora 30 or higher system with access to the Internet
+* A [fedora](https://fedoraproject.org/) 30 or higher system with access to the Internet ([Fedora on Docker Hub](https://hub.docker.com/_/fedora))
 * OpenShift 4.x Cluster environment and a cluster admin account
 
 It would be good, if you are basicly familar with ...
