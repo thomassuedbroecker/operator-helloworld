@@ -6,6 +6,13 @@ In this exercise you will complete the following:
 * Build image of our Operator and push it to [Quay.io](https://quay.io/)
 * Deploy Operator to OpenShift cluster
 
+Example usage deploy and create a helloworld application:
+
+* Deploy gif:
+
+![](../images/ex-3-01-deploy-operator.gif)
+
+
 ### Step 1: Create Quay.io Account
 
 Quay.io us a container registry provided by Red Hat. You can create your own account push container images to it. Each image can be public or private. To make images available to OpenShift you will need to make them public.
