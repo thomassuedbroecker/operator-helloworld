@@ -34,6 +34,8 @@ nav:
          - Operator Hub (IBM operators): https://operatorhub.io/?keyword=IBM
       - Files and usage: 
          - Relevant files in the "Asible-Operator-SDK" and usage of "Podman": additional/additional.md
+      - Free books:
+         - O’Reilly "Kubernetes Operators 'Automating the Container Orchestration Platform'": https://www.redhat.com/de/resources/oreilly-kubernetes-operators-automation-ebook
       - Blog posts:
          - Write your first simple operator: https://suedbroecker.net/2021/02/05/write-your-first-simple-kubernetes-operator/
 

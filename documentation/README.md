@@ -1,4 +1,4 @@
-# Operator Framework Ansible Workshop
+# Operator Framework and Ansible hands-workshop
 
 ### Introduction
 
