@@ -12,6 +12,9 @@ Example usage to deploy the operator from the [Quay.io](https://quay.io/) contai
 
 ![](../images/ex-3-01-deploy-operator.gif)
 
+* Create HelloWorld app using the operator gif:
+
+![](../images/ex-3-02-create-app-operator.gif)
 
 ### Step 1: Create Quay.io Account
 
