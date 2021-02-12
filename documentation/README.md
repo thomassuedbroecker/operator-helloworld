@@ -91,8 +91,8 @@ Following tools are needed to be installed on your local machine:
 ### Credits
 
 * [Keith Tenzer](http://keithtenzer.com) (creater of the initial version of the workshop)
-* [Thomas Südbröcker](https://twitter.com/tsuedbroecker)
 * [Ross Cruickshank](https://www.linkedin.com/in/ross-cruickshank) (Thanks, for testing the worshop on ["IBM Cloud Open Labs"](https://developer.ibm.com/openlabs/openshift) and for your valuable feedback)
+* [Thomas Südbröcker](https://twitter.com/tsuedbroecker)
 
 ### Additional resources
 
