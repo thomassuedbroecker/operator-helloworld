@@ -6,8 +6,6 @@ Add the docker ce repositories. Understanding [DNF](https://fedoraproject.org/wi
 
 _Note:_ You can also use `podman` and `buildah` instead of `Docker`. For example if you want to run the training on a [Ubuntu](https://ubuntu.com) machine. 
 
-
-
 ```sh
 sudo dnf -y install dnf-plugins-core
 ```
