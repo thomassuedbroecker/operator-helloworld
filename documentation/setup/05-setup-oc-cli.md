@@ -8,7 +8,9 @@ The OpenShift command line tools ships with oc and kubectl binaries.
 
 The access tab you see in the image contain the infromation to setup the local access to your cluster.
 
-> _Note:_ An example link to a mirror to download the [RedHat OpenShift Client Versions for 4.X](https://mirror.openshift.com/pub/openshift-v4/clients/oc/)
+> _Note:_  Here are example links to downloads for:
+> * [RedHat OpenShift Client Versions for 4.X](https://mirror.openshift.com/pub/openshift-v4/clients/oc/) 
+> *  [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started).
 
 ![](../images/roks-on-ibm-clould-example.png)
 

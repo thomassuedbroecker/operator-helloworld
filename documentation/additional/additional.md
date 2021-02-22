@@ -41,3 +41,5 @@ bundle-build:
 	podman build -f bundle.Dockerfile -t $(BUNDLE_IMG) .
 ...
 ```
+
+_Note:_ Maybe it is useful when you build your own [Ubunto VirtualBox image](https://suedbroecker.net/2021/02/01/install-virtualbox-and-setup-a-virtual-machine-with-ubuntu-on-macos/) and with Podman.
