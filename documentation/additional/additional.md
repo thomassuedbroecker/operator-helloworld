@@ -43,7 +43,7 @@ bundle-build:
 
 ### Building a Ubuntu VirtualBox image
 
- Maybe it is useful when you build your own [Ubunto VirtualBox image](https://suedbroecker.net/2021/02/01/install-virtualbox-and-setup-a-virtual-machine-with-ubuntu-on-macos/) and with Podman.
+ Maybe this is useful when you build your own [Ubunto VirtualBox image](https://suedbroecker.net/2021/02/01/install-virtualbox-and-setup-a-virtual-machine-with-ubuntu-on-macos/) and with Podman.
 
 ### Understand Custom Resource definition
 
