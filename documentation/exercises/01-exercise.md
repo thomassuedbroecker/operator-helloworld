@@ -175,7 +175,7 @@ Example output:
 
 ![](../images/01-run-local.png)
 
-### Step 8: Create a hello customer resource
+### Step 8: Create a hello custom resource
 
 Open another terminal and create the CR in your OpenShift cluster. 
 Once the CR is created, the Operator will execute the Ansible role tasks and print our debug message.

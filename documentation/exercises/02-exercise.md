@@ -11,7 +11,7 @@ In this exercise you will complete the following:
 
 Here we will learn to use the `k8s Ansible` module to gather information we want to use later in our automation. In this case the cluster domain name. Append the following tasks to the Ansible role.
 
-We going to following [Asible](https://docs.ansible.com/) 'keywords':
+We going to use following [Asible](https://docs.ansible.com/) `keywords:
 
 * [k8s_info](https://docs.ansible.com/ansible/latest/collections/community/kubernetes/k8s_info_module.html)
 * [set_fact](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/set_fact_module.html)
