@@ -74,6 +74,8 @@ error: the server doesn't have a resource type "awesome"
 
 #### Step 4: Define custom resource
 
+Create a file called `awesome-crd.yaml`and past in following content.
+
 ```yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -133,6 +135,9 @@ No resources found in default namespace.
 ```
 
 #### Step 6: Create a resource instance
+
+Now we use our defined custom resource. 
+Create a file called `awesome-crd-create.yaml`and past in following content.
 
 ```yaml
 apiVersion: my.example.com/v1
