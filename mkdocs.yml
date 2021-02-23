@@ -23,7 +23,9 @@ nav:
       - Exercise 2: exercises/02-exercise.md
       - Exercise 3: exercises/03-exercise.md
   - Additional resources:
-      - YouTube "How does it work?":
+      - Overview files and usage: 
+         - Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example: additional/additional.md
+      - YouTube videos "How does it work?":
          - Building Kubernetes Operators with the Operator Framework and Ansible (Keith Tenzer (YouTube)): https://youtu.be/5XZZxhwb_xs
          - Kubernetes Operators Explained : https://youtu.be/i9V4oCa5f9I
          - What is Ansible?: https://youtu.be/fHO1X93e4WA
@@ -32,8 +34,6 @@ nav:
          - Operator SDK: https://sdk.operatorframework.io/
          - Operator Hub (OpenShift operators): https://operatorhub.io/?category=OpenShift+Optional
          - Operator Hub (IBM operators): https://operatorhub.io/?keyword=IBM
-      - Files and usage: 
-         - Relevant files in the "Asible-Operator-SDK" and usage of "Podman": additional/additional.md
       - Free books:
          - O’Reilly "Kubernetes Operators 'Automating the Container Orchestration Platform'": https://www.redhat.com/de/resources/oreilly-kubernetes-operators-automation-ebook
       - Blog posts:
