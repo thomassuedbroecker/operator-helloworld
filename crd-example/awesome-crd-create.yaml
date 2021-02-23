@@ -1,0 +1,6 @@
+apiVersion: my.example.com/v1
+kind: Awesome
+metadata:
+  name: my-awesome-instance
+spec:
+  user: my-awesome-user
