@@ -110,7 +110,7 @@ Example output:
 
 The operator framework implements Ansible roles. By default it will create a single role but you can certainly have many roles. Roles are mapped to the API endpoint of the CRD in the `watches.yaml` file. In this case we will be adding a print statement that will print some debug when a parameter toggle_message is set to true to the role.
 
-* Open the `watches.yaml` file and inspect the content.
+* Open the `./watches.yaml` file and inspect the content.
 
 ```
 nano watches.yaml
@@ -125,7 +125,7 @@ nano watches.yaml
 # +kubebuilder:scaffold:watch
 ```
 
-* Open the `main.yml` file and insert the print statement.
+* Open the `./roles/hello/tasks/main.yml` file and insert the print statement.
 
 ```
 nano roles/hello/tasks/main.yml
@@ -152,7 +152,7 @@ This is how you get input from your users. In addition as you may have noticed y
 nano config/samples/cache_v1_hello.yaml
 ```
 
-Content to add to `cache_v1_hello.yaml`
+Content to add to `cache_v1_hello.yaml` file. `foo: bar` will be replaced with `toggle_message: true`.
 
 ```yml
 apiVersion: cache.hello.example.com/v1
