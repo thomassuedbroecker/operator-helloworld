@@ -1,0 +1,1092 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Customization by Thomas Südbröcker (Keith Tenzer)">
+      
+      
+        <link rel="canonical" href="https://thomassuedbroecker.github.io/operator-helloworld/additional/additional/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example - Hello World! Operator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700%7CIBM+Plex+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"IBM Plex Sans";--md-code-font-family:"IBM Plex Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#additional-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Hello World! Operator" class="md-header__button md-logo" aria-label="Hello World! Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hello World! Operator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/thomassuedbroecker/operator-helloworld/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    operator-helloworld
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hello World! Operator" class="md-nav__button md-logo" aria-label="Hello World! Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Hello World! Operator
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/thomassuedbroecker/operator-helloworld/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    operator-helloworld
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/01-setup/" class="md-nav__link">
+        Setup Development Environment Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/02-setup-docker/" class="md-nav__link">
+        Install Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/03-setup-ansibe-module-dependencies/" class="md-nav__link">
+        Install Ansible and Module Dependencies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/04-setup-make/" class="md-nav__link">
+        Install Make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/05-setup-oc-cli/" class="md-nav__link">
+        Install OpenShift Command Line Tools
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Exercises
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Exercises" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/01-exercise/" class="md-nav__link">
+        Exercise 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/02-exercise/" class="md-nav__link">
+        Exercise 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercises/03-exercise/" class="md-nav__link">
+        Exercise 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Additional resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Additional resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Overview files and usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview files and usage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview files and usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-files-in-the-asible-operator-sdk" class="md-nav__link">
+    Relevant files in the Asible Operator SDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-podman-in-the-makefile" class="md-nav__link">
+    Using Podman in the Makefile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-ubuntu-virtualbox-image" class="md-nav__link">
+    Building a Ubuntu VirtualBox image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-custom-resource-definition" class="md-nav__link">
+    Understand Custom Resource definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand Custom Resource definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-set-project-context" class="md-nav__link">
+    Step 1: Set project context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-get-pod-for-this-project" class="md-nav__link">
+    Step 2: Get pod for this project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-get-pod-custom-resource" class="md-nav__link">
+    Step 3: Get pod custom resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-custom-resource" class="md-nav__link">
+    Step 4: Define custom resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-get-existing-resources" class="md-nav__link">
+    Step 5: Get existing resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-create-a-resource-instance" class="md-nav__link">
+    Step 6: Create a resource instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-get-instance" class="md-nav__link">
+    Step 7: Get instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        YouTube videos "How does it work?"
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="YouTube videos "How does it work?"" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          YouTube videos "How does it work?"
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/5XZZxhwb_xs" class="md-nav__link">
+        Building Kubernetes Operators with the Operator Framework and Ansible (Keith Tenzer (YouTube))
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/i9V4oCa5f9I" class="md-nav__link">
+        Kubernetes Operators Explained
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/fHO1X93e4WA" class="md-nav__link">
+        What is Ansible?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/JMrxPyv9nxQ" class="md-nav__link">
+        Operators on OpenShift Container Platform 4.x
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Operator resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Operator resources" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Operator resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://sdk.operatorframework.io/" class="md-nav__link">
+        Operator SDK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://operatorhub.io/?category=OpenShift+Optional" class="md-nav__link">
+        Operator Hub (OpenShift operators)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://operatorhub.io/?keyword=IBM" class="md-nav__link">
+        Operator Hub (IBM operators)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Free books
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Free books" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Free books
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.redhat.com/de/resources/oreilly-kubernetes-operators-automation-ebook" class="md-nav__link">
+        O’Reilly "Kubernetes Operators 'Automating the Container Orchestration Platform'"
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Blog posts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blog posts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Blog posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://suedbroecker.net/2021/02/05/write-your-first-simple-kubernetes-operator/" class="md-nav__link">
+        Write your first simple operator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-files-in-the-asible-operator-sdk" class="md-nav__link">
+    Relevant files in the Asible Operator SDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-podman-in-the-makefile" class="md-nav__link">
+    Using Podman in the Makefile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-ubuntu-virtualbox-image" class="md-nav__link">
+    Building a Ubuntu VirtualBox image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-custom-resource-definition" class="md-nav__link">
+    Understand Custom Resource definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand Custom Resource definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-set-project-context" class="md-nav__link">
+    Step 1: Set project context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-get-pod-for-this-project" class="md-nav__link">
+    Step 2: Get pod for this project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-get-pod-custom-resource" class="md-nav__link">
+    Step 3: Get pod custom resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-custom-resource" class="md-nav__link">
+    Step 4: Define custom resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-get-existing-resources" class="md-nav__link">
+    Step 5: Get existing resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-create-a-resource-instance" class="md-nav__link">
+    Step 6: Create a resource instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-get-instance" class="md-nav__link">
+    Step 7: Get instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/thomassuedbroecker/operator-helloworld/edit/master/documentation/additional/additional.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h1>
+<h3 id="relevant-files-in-the-asible-operator-sdk">Relevant files in the <code>Asible Operator SDK</code><a class="headerlink" href="#relevant-files-in-the-asible-operator-sdk" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>[PROJECT_ROOT]/watches.yaml</code></li>
+</ul>
+<p>By default it will create a single role, but you can certainly have many roles. Roles are mapped to the API endpoint of the CRD in the <code>watches.yaml</code> file.</p>
+<ul>
+<li><code>[PROJECT_ROOT]/roles/hello/tasks/main.yml</code></li>
+</ul>
+<p>Defining the task for the role hello.</p>
+<ul>
+<li><code>[PROJECT_ROOT]/config/samples/cache_v1_hello.yaml</code></li>
+</ul>
+<p>With this <code>YAML</code> file you create a custom resource in RedHat OpenShift.</p>
+<ul>
+<li><code>[PROJECT_ROOT]/config/rbac/role.yaml</code></li>
+</ul>
+<p>This role <code>YAML</code> file containes the permissions we need to create and modify resources in RedHat OpenShift.</p>
+<ul>
+<li><code>[PROJECT_ROOT]/config/default/kustomization.yaml</code></li>
+</ul>
+<p>This kustomization `YAML file contains the information for the container image we will create as our operator.</p>
+<h3 id="using-podman-in-the-makefile">Using <code>Podman</code> in the <code>Makefile</code><a class="headerlink" href="#using-podman-in-the-makefile" title="Permanent link">&para;</a></h3>
+<p>If you use <code>Podman</code> you need to edit the Makefile replace <code>docker</code> with <code>podman</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="err">...</span>
+<span class="c"># Build the docker image</span>
+<span class="nf">docker-build</span><span class="o">:</span>
+    podman build . -t <span class="si">${</span><span class="nv">IMG</span><span class="si">}</span>
+
+<span class="c"># Push the docker image</span>
+<span class="nf">docker-push</span><span class="o">:</span>
+    podman push <span class="si">${</span><span class="nv">IMG</span><span class="si">}</span>
+<span class="err">...</span>
+<span class="nf">bundle-build</span><span class="o">:</span>
+    podman build -f bundle.Dockerfile -t <span class="k">$(</span>BUNDLE_IMG<span class="k">)</span> .
+<span class="err">...</span>
+</code></pre></div>
+<h3 id="building-a-ubuntu-virtualbox-image">Building a Ubuntu VirtualBox image<a class="headerlink" href="#building-a-ubuntu-virtualbox-image" title="Permanent link">&para;</a></h3>
+<p>Maybe this is useful when you build your own <a href="https://suedbroecker.net/2021/02/01/install-virtualbox-and-setup-a-virtual-machine-with-ubuntu-on-macos/">Ubunto VirtualBox image</a> and with Podman.</p>
+<h3 id="understand-custom-resource-definition">Understand Custom Resource definition<a class="headerlink" href="#understand-custom-resource-definition" title="Permanent link">&para;</a></h3>
+<p>For more details visit Kubernetes Documentation for <a href="https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions">Custom Resource Definitions</a></p>
+<h4 id="step-1-set-project-context">Step 1: Set project context<a class="headerlink" href="#step-1-set-project-context" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>oc project default
+</code></pre></div>
+<h4 id="step-2-get-pod-for-this-project">Step 2: Get pod for this project<a class="headerlink" href="#step-2-get-pod-for-this-project" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>oc get pods
+</code></pre></div>
+<h4 id="step-3-get-pod-custom-resource">Step 3: Get pod custom resource<a class="headerlink" href="#step-3-get-pod-custom-resource" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>oc get awesome
+</code></pre></div>
+<ul>
+<li>Example output:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>error: the server doesn<span class="err">&#39;</span>t have a resource <span class="nb">type</span> <span class="s2">&quot;awesome&quot;</span>
+</code></pre></div>
+<h4 id="step-4-define-custom-resource">Step 4: Define custom resource<a class="headerlink" href="#step-4-define-custom-resource" title="Permanent link">&para;</a></h4>
+<p>Create a file called <code>awesome-crd.yaml</code>and past in following content.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">apiextensions.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CustomResourceDefinition</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="c1"># name must match the spec fields below, and be in the form: &lt;plural&gt;.&lt;group&gt;</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">awesomes.my.example.com</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="c1"># group name to use for REST API: /apis/&lt;group&gt;/&lt;version&gt;</span>
+  <span class="nt">group</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my.example.com</span>
+  <span class="c1"># list of versions supported by this CustomResourceDefinition</span>
+  <span class="nt">versions</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+      <span class="nt">served</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">storage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">schema</span><span class="p">:</span>
+        <span class="nt">openAPIV3Schema</span><span class="p">:</span>
+          <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">host</span><span class="p">:</span>
+              <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+            <span class="nt">port</span><span class="p">:</span>
+              <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="c1"># either Namespaced or Cluster</span>
+  <span class="nt">scope</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Namespaced</span>
+  <span class="nt">names</span><span class="p">:</span>
+    <span class="c1"># plural name to be used in the URL: /apis/&lt;group&gt;/&lt;version&gt;/&lt;plural&gt;</span>
+    <span class="nt">plural</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">awesomes</span>
+    <span class="c1"># singular name to be used as an alias on the CLI and for display</span>
+    <span class="nt">singular</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">awesome</span>
+    <span class="c1"># kind is normally the CamelCased singular type. Your resource manifests use this.</span>
+    <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Awesome</span>
+    <span class="c1"># shortNames allow shorter string to match your resource on the CLI</span>
+    <span class="nt">shortNames</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">as</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>oc create -f awesome-crd.yaml
+</code></pre></div>
+<ul>
+<li>Example output:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>customresourcedefinition.apiextensions.k8s.io/awesomes.my.example.com created
+</code></pre></div>
+<h4 id="step-5-get-existing-resources">Step 5: Get existing resources<a class="headerlink" href="#step-5-get-existing-resources" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>oc get awesomes 
+</code></pre></div>
+<ul>
+<li>Example output:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>No resources found <span class="k">in</span> default namespace.
+</code></pre></div>
+<h4 id="step-6-create-a-resource-instance">Step 6: Create a resource instance<a class="headerlink" href="#step-6-create-a-resource-instance" title="Permanent link">&para;</a></h4>
+<p>Now we use our defined custom resource. 
+Create a file called <code>awesome-crd-create.yaml</code>and past in following content.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my.example.com/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Awesome</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-awesome-instance</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-awesome-user</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>oc create -f awesome-crd-create.yaml
+</code></pre></div>
+<ul>
+<li>Example output:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>awesome.my.example.com/my-awesome-instance created
+</code></pre></div>
+<h4 id="step-7-get-instance">Step 7: Get instance<a class="headerlink" href="#step-7-get-instance" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>oc get awesomes
+</code></pre></div>
+<ul>
+<li>Example output:
+<div class="highlight"><pre><span></span><code>NAME                  AGE
+my-awesome-instance   38s
+</code></pre></div></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../exercises/03-exercise/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exercise 3
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>

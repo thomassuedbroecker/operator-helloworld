@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Customization by Thomas Südbröcker (Keith Tenzer)">
+      
+      
+        <link rel="canonical" href="https://thomassuedbroecker.github.io/operator-helloworld/exercises/02-exercise/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Exercise 2 - Hello World! Operator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700%7CIBM+Plex+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"IBM Plex Sans";--md-code-font-family:"IBM Plex Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercise-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Hello World! Operator" class="md-header__button md-logo" aria-label="Hello World! Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hello World! Operator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercise 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/thomassuedbroecker/operator-helloworld/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    operator-helloworld
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hello World! Operator" class="md-nav__button md-logo" aria-label="Hello World! Operator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Hello World! Operator
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/thomassuedbroecker/operator-helloworld/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    operator-helloworld
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/01-setup/" class="md-nav__link">
+        Setup Development Environment Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/02-setup-docker/" class="md-nav__link">
+        Install Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/03-setup-ansibe-module-dependencies/" class="md-nav__link">
+        Install Ansible and Module Dependencies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/04-setup-make/" class="md-nav__link">
+        Install Make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/05-setup-oc-cli/" class="md-nav__link">
+        Install OpenShift Command Line Tools
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Exercises
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Exercises" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-exercise/" class="md-nav__link">
+        Exercise 1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercise 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exercise 2
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-update-ansible-role-to-get-cluster-domain-name-and-save-as-a-fact" class="md-nav__link">
+    Step 1: Update Ansible role to get cluster domain name and save as a fact
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-operator-using-ansible-runner" class="md-nav__link">
+    Step 2: Run Operator using ansible-runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-update-ansible-role-to-deploy-hellowoworld-application" class="md-nav__link">
+    Step 3: Update Ansible role to deploy hellowoworld application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-update-role-permissions" class="md-nav__link">
+    Step 4: Update role permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-run-operator-using-ansible-runner" class="md-nav__link">
+    Step 5: Run Operator using ansible-runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-our-deployment" class="md-nav__link">
+    Step 6: Test our deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-step-7-open-the-developer-perspective-in-your-redhat-web-console" class="md-nav__link">
+    Optional Step 7: Open the Developer perspective in your RedHat web console
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-exercise/" class="md-nav__link">
+        Exercise 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Additional resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Additional resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" data-md-state="indeterminate" type="checkbox" id="__nav_4_1" checked>
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Overview files and usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview files and usage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview files and usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional/additional/" class="md-nav__link">
+        Relevant files in the "Asible-Operator-SDK", usage of "Podman" and "CRD" example
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        YouTube videos "How does it work?"
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="YouTube videos "How does it work?"" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          YouTube videos "How does it work?"
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/5XZZxhwb_xs" class="md-nav__link">
+        Building Kubernetes Operators with the Operator Framework and Ansible (Keith Tenzer (YouTube))
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/i9V4oCa5f9I" class="md-nav__link">
+        Kubernetes Operators Explained
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/fHO1X93e4WA" class="md-nav__link">
+        What is Ansible?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://youtu.be/JMrxPyv9nxQ" class="md-nav__link">
+        Operators on OpenShift Container Platform 4.x
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Operator resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Operator resources" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Operator resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://sdk.operatorframework.io/" class="md-nav__link">
+        Operator SDK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://operatorhub.io/?category=OpenShift+Optional" class="md-nav__link">
+        Operator Hub (OpenShift operators)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://operatorhub.io/?keyword=IBM" class="md-nav__link">
+        Operator Hub (IBM operators)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Free books
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Free books" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Free books
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.redhat.com/de/resources/oreilly-kubernetes-operators-automation-ebook" class="md-nav__link">
+        O’Reilly "Kubernetes Operators 'Automating the Container Orchestration Platform'"
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Blog posts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Blog posts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Blog posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://suedbroecker.net/2021/02/05/write-your-first-simple-kubernetes-operator/" class="md-nav__link">
+        Write your first simple operator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-update-ansible-role-to-get-cluster-domain-name-and-save-as-a-fact" class="md-nav__link">
+    Step 1: Update Ansible role to get cluster domain name and save as a fact
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-operator-using-ansible-runner" class="md-nav__link">
+    Step 2: Run Operator using ansible-runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-update-ansible-role-to-deploy-hellowoworld-application" class="md-nav__link">
+    Step 3: Update Ansible role to deploy hellowoworld application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-update-role-permissions" class="md-nav__link">
+    Step 4: Update role permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-run-operator-using-ansible-runner" class="md-nav__link">
+    Step 5: Run Operator using ansible-runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-our-deployment" class="md-nav__link">
+    Step 6: Test our deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-step-7-open-the-developer-perspective-in-your-redhat-web-console" class="md-nav__link">
+    Optional Step 7: Open the Developer perspective in your RedHat web console
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/thomassuedbroecker/operator-helloworld/edit/master/documentation/exercises/02-exercise.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="exercise-2">Exercise 2<a class="headerlink" href="#exercise-2" title="Permanent link">&para;</a></h1>
+<p>In this exercise you will complete the following:</p>
+<ul>
+<li>Expand <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">Ansible role</a> to get the cluster domain name and save that in a fact</li>
+<li>Expand the <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">Ansible role</a> to deply a helloworld application</li>
+<li>Test the operator using the <a href="https://github.com/ansible/ansible-runner">ansible-runner</a></li>
+<li>Deploy operator to namespace so it runs without the <a href="https://github.com/ansible/ansible-runner">ansible-runner</a></li>
+</ul>
+<h3 id="step-1-update-ansible-role-to-get-cluster-domain-name-and-save-as-a-fact">Step 1: Update Ansible role to get cluster domain name and save as a fact<a class="headerlink" href="#step-1-update-ansible-role-to-get-cluster-domain-name-and-save-as-a-fact" title="Permanent link">&para;</a></h3>
+<p>Here we will learn to use the <code>k8s Ansible</code> module to gather information we want to use later in our automation. In this case the cluster domain name. Append the following tasks to the Ansible role.</p>
+<p>We going to use following <a href="https://docs.ansible.com/">Asible</a> `keywords:</p>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/community/kubernetes/k8s_info_module.html">k8s_info</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/set_fact_module.html">set_fact</a></li>
+<li>debug</li>
+</ul>
+<div class="highlight"><pre><span></span><code>nano roles/hello/tasks/main.yml
+</code></pre></div>
+<p>Content to addd to the <code>main.yml</code>:</p>
+<div class="highlight"><pre><span></span><code>- name: Get Application Domain from Cluster Ingress
+  k8s_info:
+    api_version: config.openshift.io/v1
+    kind: Ingress
+    name: cluster
+  when: application_domain is undefined
+  register: ingress
+
+- name: Set Application Domain
+  set_fact:
+    application_domain: &quot;{{ ingress.resources[0].spec.domain }}&quot;
+  when: application_domain is undefined
+
+- name: Print application domain
+  debug:
+    msg: &quot;Application domain is {{ application_domain }}&quot;
+</code></pre></div>
+<h3 id="step-2-run-operator-using-ansible-runner">Step 2: Run Operator using ansible-runner<a class="headerlink" href="#step-2-run-operator-using-ansible-runner" title="Permanent link">&para;</a></h3>
+<p>Each time Operator is started or something changes with our CRD the Ansible role will run and our changes will of course be executed.</p>
+<div class="highlight"><pre><span></span><code>ansible-operator run <span class="nb">local</span>
+</code></pre></div>
+<p>In the Example output you see the execution of the predefined tasks in the <code>main.yml</code>.</p>
+<ul>
+<li><code>Gathering Facts</code> </li>
+</ul>
+<div class="highlight"><pre><span></span><code>--------------------------- Ansible Task StdOut -------------------------------
+TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *********************************************************
+-------------------------------------------------------------------------------
+<span class="o">{</span><span class="s2">&quot;level&quot;</span>:<span class="s2">&quot;info&quot;</span>,<span class="s2">&quot;ts&quot;</span>:1612430621.8876169,<span class="s2">&quot;logger&quot;</span>:<span class="s2">&quot;logging_event_handler&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;[playbook debug]&quot;</span>,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;hello-sample&quot;</span>,<span class="s2">&quot;namespace&quot;</span>:<span class="s2">&quot;operator-helloworld&quot;</span>,<span class="s2">&quot;gvk&quot;</span>:<span class="s2">&quot;cache.hello.example.com/v1, Kind=Hello&quot;</span>,<span class="s2">&quot;event_type&quot;</span>:<span class="s2">&quot;runner_on_ok&quot;</span>,<span class="s2">&quot;job&quot;</span>:<span class="s2">&quot;3916589616287113937&quot;</span>,<span class="s2">&quot;EventData.TaskArgs&quot;</span>:<span class="s2">&quot;&quot;</span><span class="o">}</span>
+</code></pre></div>
+<ul>
+<li><code>Hello World Task</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>--------------------------- Ansible Task StdOut -------------------------------
+TASK <span class="o">[</span>Hello World Task<span class="o">]</span> ******************************** 
+ok: <span class="o">[</span>localhost<span class="o">]</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    <span class="s2">&quot;msg&quot;</span>: <span class="s2">&quot;Hello World! I live in a namespace called operator-helloworld&quot;</span>
+<span class="o">}</span>
+<span class="s2">&quot;level&quot;</span>:<span class="s2">&quot;info&quot;</span>,<span class="s2">&quot;ts&quot;</span>:1612430621.8958986,<span class="s2">&quot;logger&quot;</span>:<span class="s2">&quot;logging_event_handler&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;[playbook task]&quot;</span>,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;hello-sample&quot;</span>,<span class="s2">&quot;namespace&quot;</span>:<span class="s2">&quot;operator-helloworld&quot;</span>,<span class="s2">&quot;gvk&quot;</span>:<span class="s2">&quot;cache.hello.example.com/v1, Kind=Hello&quot;</span>,<span class="s2">&quot;event_type&quot;</span>:<span class="s2">&quot;playbook_on_task_start&quot;</span>,<span class="s2">&quot;job&quot;</span>:<span class="s2">&quot;3916589616287113937&quot;</span>,<span class="s2">&quot;EventData.Name&quot;</span>:<span class="s2">&quot;hello : Get Application Domain from Cluster Ingress&quot;</span><span class="o">}</span>
+</code></pre></div>
+<ul>
+<li><code>hello : Get Application Domain from Cluster Ingress</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>-------------------------- Ansible Task StdOut -------------------------------
+TASK <span class="o">[</span>hello : Get Application Domain from Cluster Ingress<span class="o">]</span> *********************
+task path: /home/ubuntu/operator-helloworld/roles/hello/tasks/main.yml:8
+<span class="s2">&quot;level&quot;</span>:<span class="s2">&quot;info&quot;</span>,<span class="s2">&quot;ts&quot;</span>:1612430622.4394364,<span class="s2">&quot;logger&quot;</span>:<span class="s2">&quot;proxy&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;Skipping cache lookup&quot;</span>,<span class="s2">&quot;resource&quot;</span>:<span class="o">{</span><span class="s2">&quot;IsResourceRequest&quot;</span>:false,<span class="s2">&quot;Path&quot;</span>:<span class="s2">&quot;/version&quot;</span>,<span class="s2">&quot;Verb&quot;</span>:<span class="s2">&quot;get&quot;</span>,<span class="s2">&quot;APIPrefix&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;APIGroup&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;APIVersion&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;Namespace&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;Resource&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;Subresource&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;Name&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;Parts&quot;</span>:null<span class="o">}}</span>
+....
+</code></pre></div>
+<ul>
+<li><code>Print application domain</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>--------------------------- Ansible Task StdOut -------------------------------
+TASK <span class="o">[</span>Print application domain<span class="o">]</span> ******************************** 
+ok: <span class="o">[</span>localhost<span class="o">]</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    <span class="s2">&quot;msg&quot;</span>: <span class="s2">&quot;Application domain is rh-workshop-..000.us-south.containers.appdomain.cloud&quot;</span>
+<span class="o">}</span>
+level<span class="s2">&quot;:&quot;</span>info<span class="s2">&quot;,&quot;</span>ts<span class="s2">&quot;:1612430626.1358507,&quot;</span>logger<span class="s2">&quot;:&quot;</span>runner<span class="s2">&quot;,&quot;</span>msg<span class="s2">&quot;:&quot;</span>Ansible-runner exited successfully<span class="s2">&quot;,&quot;</span>job<span class="s2">&quot;:&quot;</span><span class="m">3916589616287113937</span><span class="s2">&quot;,&quot;</span>name<span class="s2">&quot;:&quot;</span>hello-sample<span class="s2">&quot;,&quot;</span>namespace<span class="s2">&quot;:&quot;</span>operator-helloworld<span class="s2">&quot;}</span>
+</code></pre></div>
+<ul>
+<li><code>PLAY RECAP</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>--------------------------- Ansible Task Status Event StdOut  -----------------
+PLAY RECAP *********************************************************************
+localhost                  : <span class="nv">ok</span><span class="o">=</span><span class="m">5</span>    <span class="nv">changed</span><span class="o">=</span><span class="m">0</span>    <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>    <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>    <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>    <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>    <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span>   
+</code></pre></div>
+<h3 id="step-3-update-ansible-role-to-deploy-hellowoworld-application">Step 3: Update Ansible role to deploy hellowoworld application<a class="headerlink" href="#step-3-update-ansible-role-to-deploy-hellowoworld-application" title="Permanent link">&para;</a></h3>
+<p>Now we will learn to use the <code>k8s</code> Ansible module to deploy an application. 
+We will deploy a helloworld application that prints to <code>STDOUT</code>. 
+Notice the route is using the cluster domain we gathered in the previous step. In this step we will create a deployment, service and route for our helloworld application. 
+Append the following tasks to the Ansible role.</p>
+<div class="highlight"><pre><span></span><code>nano roles/hello/tasks/main.yml
+</code></pre></div>
+<ul>
+<li>We use <code>k8s:definition:</code> to define the <code>Service</code>, <code>Deployment</code> and <code>Route</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>- name: Deploy helloworld service
+  k8s:
+    definition:
+      apiVersion: v1
+      kind: Service
+      metadata:
+        namespace: &quot;{{ ansible_operator_meta.namespace }}&quot;
+        labels:
+          app: helloworld
+        name: helloworld
+      spec:
+        ports:
+        - port: 8080
+          targetPort: 8080
+        selector:
+          app: helloworld
+          name: helloworld
+      status:
+        loadBalancer: {}
+
+- name: Deploy helloworld app
+  k8s:
+    definition:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: helloworld
+        namespace: &quot;{{ ansible_operator_meta.namespace }}&quot;
+        labels:
+          app: helloworld
+      spec:
+        replicas: 1
+        strategy:
+          type: RollingUpdate
+        selector:
+          matchLabels:
+            app: helloworld
+        template:
+          metadata:
+            labels:
+              app: helloworld
+              name: helloworld
+          spec:
+            containers:
+            - image: openshift/hello-openshift
+              imagePullPolicy: Always
+              name: helloworld
+              readinessProbe:
+                httpGet:
+                  path: /
+                  port: 8080
+                initialDelaySeconds: 60
+                periodSeconds: 10
+                timeoutSeconds: 60
+              livenessProbe:
+                httpGet:
+                  path: /
+                  port: 8080
+                initialDelaySeconds: 120
+                periodSeconds: 10
+              ports:
+              - containerPort: 8080
+            restartPolicy: Always
+        triggers:
+        - type: ConfigChange
+
+- name: Deploy helloworld route
+  k8s:
+    definition:
+      apiVersion: route.openshift.io/v1
+      kind: Route
+      metadata:
+        namespace: &quot;{{ ansible_operator_meta.namespace }}&quot;
+        annotations:
+          openshift.io/host.generated: &quot;true&quot;
+        name: helloworld
+      spec:
+        host: &quot;hello-{{ ansible_operator_meta.namespace }}.{{application_domain}}&quot;
+        to:
+          kind: Service
+          name: helloworld
+          weight: 100
+        port:
+          targetPort: 8080
+        wildcardPolicy: None
+</code></pre></div>
+<h3 id="step-4-update-role-permissions">Step 4: Update role permissions<a class="headerlink" href="#step-4-update-role-permissions" title="Permanent link">&para;</a></h3>
+<p>Since we are creating a <code>service</code> and <code>route</code> we need to add those permissions to the <code>hello</code> role,
+to add services so we can create them.</p>
+<p>Open the <code>role.yaml</code> file. (More about <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">roles</a>)</p>
+<div class="highlight"><pre><span></span><code>nano config/rbac/role.yaml
+</code></pre></div>
+<p>Change the permissions.</p>
+<div class="highlight"><pre><span></span><code>##
+## Rules for cache.hello.example.com/v1, Kind: Hello
+##
+  - apiGroups:
+      - &quot;&quot;
+    resources:
+      - secrets
+      - pods
+      - pods/exec
+      - pods/log
+      - services
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+</code></pre></div>
+<p>Append also <code>routes</code> and <code>ingress api</code> groups so we can also manage those objects.</p>
+<div class="highlight"><pre><span></span><code>##
+## Rules for cache.hello.example.com/v1, Kind: Hello
+##
+  ...
+  ...
+  - apiGroups:
+    - &quot;&quot;
+    - config.openshift.io
+    resources:
+    - ingresses
+    verbs:
+    - create
+    - delete
+    - deletecollection
+    - get
+    - list
+    - patch
+    - update
+    - watch
+  - apiGroups:
+    - &quot;&quot;
+    - route.openshift.io
+    resources:
+    - routes
+    - routes/custom-host
+    verbs:
+    - create
+    - delete
+    - deletecollection
+    - get
+    - list
+    - patch
+    - update
+    - watch
+</code></pre></div>
+<h3 id="step-5-run-operator-using-ansible-runner">Step 5: Run Operator using ansible-runner<a class="headerlink" href="#step-5-run-operator-using-ansible-runner" title="Permanent link">&para;</a></h3>
+<p>This time we should see the application being deployed. 
+A single pod should start and a <code>service/route</code> should be created.</p>
+<div class="highlight"><pre><span></span><code>ansible-operator run <span class="nb">local</span>
+</code></pre></div>
+<h3 id="step-6-test-our-deployment">Step 6: Test our deployment<a class="headerlink" href="#step-6-test-our-deployment" title="Permanent link">&para;</a></h3>
+<p>To test simply use curl against the route URL. It does take a minute or so to start application.</p>
+<ul>
+<li>pods:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>oc get pods
+</code></pre></div>
+<p>Example output:</p>
+<p><div class="highlight"><pre><span></span><code>NAME                         READY   STATUS    RESTARTS   AGE
+helloworld-f9d964dcc-jgcmn   <span class="m">1</span>/1     Running   <span class="m">0</span>          70s
+</code></pre></div>
+* routes:</p>
+<div class="highlight"><pre><span></span><code>oc get routes
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code>NAME         HOST/PORT                                             PATH   SERVICES     PORT   TERMINATION   WILDCARD
+helloworld   hello-operator-helloworld.apps.xxxxx.com          helloworld   <span class="m">8080</span>
+</code></pre></div>
+<ul>
+<li>Invoke <code>YOUR</code> URL with curl or just open a browser and insert the URL</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ curl http://hello-operator-helloworld.xxxxxx.com
+Hello OpenShift!
+</code></pre></div>
+<h3 id="optional-step-7-open-the-developer-perspective-in-your-redhat-web-console">Optional Step 7: Open the <a href="https://docs.openshift.com/container-platform/4.5/web_console/odc-about-developer-perspective.html"><code>Developer perspective</code></a> in your RedHat web console<a class="headerlink" href="#optional-step-7-open-the-developer-perspective-in-your-redhat-web-console" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Select <code>operator-helloworld</code> project</li>
+<li>Select <code>external route</code> from the <code>helloworld</code> pod</li>
+</ul>
+<p><img alt="" src="../../images/ex-2-01.png" /></p>
+<ul>
+<li>Verify the application in your browser</li>
+</ul>
+<p><img alt="" src="../../images/ex-2-02.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../01-exercise/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exercise 1
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../03-exercise/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Exercise 3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
